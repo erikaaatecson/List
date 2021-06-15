@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+
+namespace List2
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            // Create Employee Objects
+            Employee emp1 = new Employee()
+            {
+                ID = 101,
+                Name = "Erika Tecson",
+                Gender = "Female",
+                Salary = 500
+            };
+            Employee emp2 = new Employee()
+            {
+                ID = 102,
+                Name = "Jhyzel Orcega",
+                Gender = "Female",
+                Salary = 700
+            };
+            Employee emp3 = new Employee()
+            {
+                ID = 103,
+                Name = "Elton John Navarro",
+                Gender = "Male",
+                Salary = 550
+            };
+            Employee emp4 = new Employee()
+            {
+                ID = 104,
+                Name = "Jerrica Fernandez",
+                Gender = "Female",
+                Salary = 650
+            };
+            
+            // Create a List of Employees
+            List<Employee> listEmployees = new List<Employee>();
+            
+            listEmployees.Add(emp1);
+            listEmployees.Add(emp2);
+            listEmployees.Add(emp3);
+            listEmployees.Add(emp4);
+            // The List index is also 0 based.
+            Employee emp = listEmployees[0];
+
+            Console.WriteLine("First Employee and her Name, Gender and Salary");
+            Console.WriteLine("ID = {0}, Name = {1}, Gender = {2}, Salary = {3}",
+                     emp.ID, emp.Name, emp.Gender, emp.Salary);
+            Console.WriteLine();
+            
+            // retrieving the list using for loop
+            Console.WriteLine("Other Employees and their Names, Gender and Salary");
+            for (int i = 0; i < listEmployees.Count; i++)
+            {
+                Employee employee = listEmployees[i];
+                Console.WriteLine("ID = {0}, Name = {1}, Gender = {2}, Salary = {3}",
+                         employee.ID, employee.Name, employee.Gender, employee.Salary);
+            }
+            Console.WriteLine();
+
+           
+        }
+    }
+    public class Employee
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public int Salary { get; set; }
+    }
+}
